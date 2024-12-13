@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaf Sense</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        if (localStorage.getItem("isLoggedIn") !== "true") {
+            window.location.href = "login.html";
+        }
+    </script>
+</head>
+<body>
+    <div style="text-align: right;">
+        <button onclick="logout()">Logout</button>
+    </div>
+    <div class="container">
+        <h1>Artikel Teh</h1>
+
+        <div class="form-container">
+            <h2 id="form-title">Tambah Artikel</h2>
+            <form id="article-form">
+                <label for="title">Judul Artikel:</label>
+                <input type="text" id="title" required>
+
+                <label for="content">Isi Artikel:</label>
+                <textarea id="content" rows="5" required></textarea>
+
+                <label for="plant-type">Tipe Tanaman:</label>
+                <input type="text" id="plant-type" required>
+
+                <label for="image">Unggah Gambar:</label>
+                <input type="file" id="image" accept="image/*" required>
+
+                <button type="submit" id="submit-btn">Tambah</button>
+                <button type="button" id="cancel-btn" style="display: none;">Batal</button>
+            </form>
+        </div>
+
+        <div class="articles">
+            <h2>Daftar Artikel</h2>
+            <div id="articles-list"></div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
